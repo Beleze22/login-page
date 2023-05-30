@@ -5,6 +5,11 @@ let usuarios = [
   },
 ];
 
+function clear() {
+  document.getElementById("email").value = "";
+  document.getElementById("password").value = "";
+}
+
 function cadastrar() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -12,8 +17,7 @@ function cadastrar() {
 
   usuarios.push(novoUsuario);
 
-  document.getElementById("email").value = "";
-  document.getElementById("password").value = "";
+  clear();
 }
 
 function validar() {
@@ -23,5 +27,11 @@ function validar() {
 
   const check = usuarios.find((e) => e.email === email);
 
-  console.log(check);
+  if (check.email === login.email && check.senha == login.senha) {
+    alert("Sucesso");
+  } else {
+    alert("Login ou senha inválidos");
+  }
+
+  clear();
 }
