@@ -1,0 +1,13 @@
+{
+  "name": "login-page",
+  "version": "1.0.0",
+  "description": "a simple login page",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gustavo Beleze",
+  "license": "ISC"
+}
