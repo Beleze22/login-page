@@ -1,26 +1,26 @@
 let usuarios = [
   {
-    email: "admin@admin.com",
+    usuario: "admin@admin.com",
     senha: "admin",
   },
 ];
 
 function clear() {
-  document.getElementById("email").value = "";
+  document.getElementById("usuario").value = "";
   document.getElementById("password").value = "";
-  document.getElementById("emailCadastro").value = "";
+  document.getElementById("usuarioCadastro").value = "";
   document.getElementById("passwordCadastro").value = "";
   document.getElementById("confirmPassword").value = "";
 }
 
 function cadastrar() {
-  const email = document.getElementById("emailCadastro").value;
+  const usuario = document.getElementById("usuarioCadastro").value;
   const password = document.getElementById("passwordCadastro").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
-  if (email && password) {
+  if (usuario && password) {
     if (password === confirmPassword) {
-      const novoUsuario = { email: email, senha: password };
+      const novoUsuario = { usuario: usuario, senha: password };
       usuarios.push(novoUsuario);
       clear();
       alert("Novo usuário cadastrado!");
@@ -35,20 +35,20 @@ function cadastrar() {
 }
 
 function validar() {
-  const email = document.getElementById("email").value;
+  const usuario = document.getElementById("usuario").value;
   const password = document.getElementById("password").value;
-  const login = { email: email, senha: password };
-  const check = usuarios.find((e) => e.email === email);
+  const login = { usuario: usuario, senha: password };
+  const check = usuarios.find((u) => u.usuario === usuario);
 
-  if (email && password) {
+  if (usuario && password) {
     if (check !== undefined) {
-      if (check.email === login.email && check.senha == login.senha) {
+      if (check.usuario === login.usuario && check.senha == login.senha) {
         alert("Sucesso");
       } else {
         alert("Senha inválida");
       }
     } else {
-      alert("E-mail não cadastrado!");
+      alert("Usuário não cadastrado!");
     }
   } else {
     alert("Preencha os campos solicitados!");
